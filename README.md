@@ -14,6 +14,8 @@ Modern techniques including transfer learning, class weighting, real-time pictur
 ![pipeline](https://github.com/Shrivastavadev/Retinal-Disease-detection-using-ML/assets/137807080/169a62b8-c762-448d-9b89-37c3351bcdc9)
 
 
+
+
 ## RFMiD 3.0
 
 It is a custom dataset created for the project purpose which was made by combining pre existing datasets, which are:
@@ -25,7 +27,9 @@ Since the dataset was highly imbalanced and classification of all 58 diseases mi
 
 After data collection all the images were square padded so as to not lose the retinal image during resizing.
 
-![Data]("https://github.com/Shrivastavadev/Retinal-Disease-detection-using-ML/assets/137807080/04562774-bb19-49e9-8f58-a01a34e3f33a")
+
+<img src="https://github.com/Shrivastavadev/Retinal-Disease-detection-using-ML/assets/137807080/14c4c7da-503a-49d7-8120-0c1442ad35c5" width = "450" height = "250" alt="Data" />
+
 ## Understanding The Pipeline
 
 Our pipeline consists of first the data cleaning part where square padding was done, followed by upsampling by introducing flip, brightness variation, and variation in Hue. After this the images are first fed into a two CNN architecture consisting of DenseNet121, and ResNet152, thereafter a weighted average ensemble is created for disease risk detector which simply classifies the image into diseased or not. After This The image is fed into a series of CNNs which are two DensNet121, VGG-16, VGG-19, two DensNet201, ResNet152, EfficientNetB0, EfficientNetB7. All these CNNs are trained majorly on different subset of data depending upon the distribution.
@@ -40,7 +44,7 @@ activation function. The Ensemble of these 2 classifiers was created using weigh
         Table 4: CNN architecture selection
 
         | CNN             | Train Accuracy | Test Accuracy |
-        | :------         | :------------: | :-----------: |
+        | ------          | -------------- | ------------- |
         | DensNet121      | 59.43%         | 76.64%        |
         | DensNet169      | 58.11%         | 71.23%        |
         | DensNet201      | 58.48%         | 75.40%        |
@@ -69,7 +73,7 @@ The Disease detector ensemble showed promising results, the train test accuracie
         Table: Disease Detector Enasemble
         
         | CNN         | Train Accuracy | Test Accuracy |
-        | :-------    | :------------: | :-----------: |
+        | --------    | -------------- | ------------- |
         | DensNet121  | 93.86%         | 96.17%        |
         | DensNet201  | 95.11%         | 91.13%        |
         | Ensemble    | 92.85%         | 95.63%        |        
