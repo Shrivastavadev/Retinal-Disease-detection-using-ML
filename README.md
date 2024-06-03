@@ -82,7 +82,7 @@ The Disease detector ensemble showed promising results, the train test accuracie
 
 The detailed report of the work done can be find below:
 
-- [Retinal Disease detection using ML]("https://github.com/Shrivastavadev/Retinal-Disease-detection-using-ML/blob/main/Retinal%20Disease%20Deection%20using%20ML.pdf")
+- [Retinal Disease detection using ML](/Retinal Disease Detection using ML.pdf)
 
 
 ## Acknowledgements
