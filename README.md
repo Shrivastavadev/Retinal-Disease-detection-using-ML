@@ -87,7 +87,7 @@ The detailed report of the work done can be find below:
 
 ## Acknowledgements
 
- - [Subhankar Mishra](smishra@niser.ac.in)
- - [Shubhanshu Prasad](linkedin.com/in/shubhanshu-prasad)
+ - [Subhankar Mishra](https://niser.ac.in/~smishra)
+ - [Shubhanshu Prasad](https://linkedin.com/in/shubhanshu-prasad)
 
 
