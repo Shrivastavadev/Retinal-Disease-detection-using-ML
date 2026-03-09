@@ -4,9 +4,9 @@
 Automatic multi-disease detection models have showed promise in tackling the
 widespread issue of avoidable or undetected blindness and visual impairment. 
 
-In this project, we propose a multi-disease detection pipeline for retinal disease identification, the pipeline was inspired from the work of [Muller et. al.]("https://www.nature.com/articles/s41467-021-25138-w") did and the modifications were done on their proposed pipeline along with construction of a new data set for better training and testing of the models used. The pipeline uses ensemble techniques that combines the prediction power of many heterogeneous deep convolutional neural network models using ensemble learning. 
+In this project, we propose a multi-disease detection pipeline for retinal disease identification, the pipeline was inspired from the work of [Muller et. al.]("https://www.nature.com/articles/s41467-021-25138-w") and the modifications were done on their proposed pipeline along with construction of a new data set for better training and testing of the models used. The pipeline uses ensemble techniques that combines the prediction power of many heterogeneous deep convolutional neural network models using ensemble learning. 
 
-Modern techniques including transfer learning, class weighting, real-time picture augmentation, and the use of focal loss are all incorporated into the pipeline. Moreover, we use ensemble learning methods including stacked logistic regression models, bagging via 5-fold cross-validation, and heterogeneous deep learning models.We were able to validate and show excellent accuracy and dependability of our pipeline.
+Modern techniques including transfer learning, class weighting, real-time picture augmentation, and the use of focal loss are all incorporated into the pipeline. Moreover, we use ensemble learning methods including stacked logistic regression models, bagging via 5-fold cross-validation, and heterogeneous deep learning models. We were able to validate and show excellent accuracy and dependability of our pipeline.
 
 
 ## Proposed Pipeline
@@ -23,7 +23,7 @@ It is a custom dataset created for the project purpose which was made by combini
 
 These datasets were processed so factors like dimensions, retinal image circle, clearity are roughly similar. Then the datasets were split into training, testing and validation sets. Finally all after all these datasets were processed individually, the training, testing, and validation sets were mixed to form a bigger train-test dataset. By doing this we were able to make a dataset where we had 11,372 retinal images (we had more but got filtered during initial processing rounds.)
 
-Since the dataset was highly imbalanced and classification of all 58 diseases might not be possible. Hence the classification of 38 and one other category was made.
+Since the dataset was highly imbalanced and classification of all 58 diseases might not be possible. Hence, the classification of 38 and one other category was made.
 
 After data collection all the images were square padded so as to not lose the retinal image during resizing.
 
@@ -34,7 +34,7 @@ After data collection all the images were square padded so as to not lose the re
 
 Our pipeline consists of first the data cleaning part where square padding was done, followed by upsampling by introducing flip, brightness variation, and variation in Hue. After this the images are first fed into a two CNN architecture consisting of DenseNet121, and ResNet152, thereafter a weighted average ensemble is created for disease risk detector which simply classifies the image into diseased or not. After This The image is fed into a series of CNNs which are two DensNet121, VGG-16, VGG-19, two DensNet201, ResNet152, EfficientNetB0, EfficientNetB7. All these CNNs are trained majorly on different subset of data depending upon the distribution.
 
-This step is crucial as the dataset is highly imbalanced getting high accuracy with just one classifier for multi-label problem will not be a fruitful attempt.  Then these CNNs are stacked together by using their output to create a support vector regression ensemble. 
+This step is crucial as the dataset is highly imbalanced getting high accuracy with just one classifier for multi-label problem will not be a fruitful attempt. Then these CNNs are stacked together by using their output to create a support vector regression ensemble. 
 
 Another approach of using stacked logistic regression for individual classes is hypothesized for testing. The CNNs selected for the ensemble were first tested along with some other CNNs on part of training data as to compare accuracy of other networks and then selected, the training was done for 50 epochs for each CNN. 
 
